@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-4">
-              <img src="/public/lovable-uploads/cc01cb4d-5284-4b19-b216-96d31585bcba.png" alt="PlugGo Logo" className="h-12" />
+              <img src="/lovable-uploads/cc01cb4d-5284-4b19-b216-96d31585bcba.png" alt="PlugGo Logo" className="h-12" />
             </div>
             <p className="text-gray-300 mb-4">
               Soluções inovadoras de pagamento para impulsionar o seu negócio com a sorte do sucesso.

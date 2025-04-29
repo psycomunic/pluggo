@@ -65,7 +65,7 @@ export const Benefits: React.FC = () => {
           <div className="inline-flex items-center justify-center w-20 h-20">
             {/* Leprechaun mascot */}
             <img 
-              src="/public/lovable-uploads/0afecb25-c6ca-42fe-a1f1-e2d5bf368139.png" 
+              src="/lovable-uploads/0afecb25-c6ca-42fe-a1f1-e2d5bf368139.png" 
               alt="PlugGo Leprechaun Mascot" 
               className="w-20 h-20 object-contain" 
             />
