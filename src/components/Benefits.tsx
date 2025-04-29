@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Shield, Clock, Star, Award } from "lucide-react";
+import { Shield, Clock, Star, Award, Database } from "lucide-react";
 
 export const Benefits: React.FC = () => {
   const benefits = [
@@ -55,6 +55,52 @@ export const Benefits: React.FC = () => {
               <p className="text-gray-600">{benefit.description}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 bg-white rounded-2xl shadow-lg p-8">
+          <h3 className="text-2xl font-bold mb-6 text-center">Nossa Tecnologia</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="bg-green-50 p-2 rounded-full">
+                  <Database size={24} className="text-pluggo-gold" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg">Hub de Integração de Pagamentos</h4>
+                  <p className="text-gray-600">Integração completa com os principais liquidantes do mercado, permitindo uma gestão centralizada.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="bg-green-50 p-2 rounded-full">
+                  <Shield size={24} className="text-pluggo-gold" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg">Pix In e Pix Out</h4>
+                  <p className="text-gray-600">Solução completa para recebimentos e pagamentos via Pix de forma rápida e segura.</p>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="bg-green-50 p-2 rounded-full">
+                  <Award size={24} className="text-pluggo-gold" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg">Boleto Bancário</h4>
+                  <p className="text-gray-600">Emissão e gestão de boletos bancários com compensação automática e relatórios detalhados.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="bg-green-50 p-2 rounded-full">
+                  <Monitor size={24} className="text-pluggo-gold" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg">Dashboard Intuitivo</h4>
+                  <p className="text-gray-600">Painel administrativo completo para gerenciamento de clientes, transações e relatórios financeiros.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-12 text-center">

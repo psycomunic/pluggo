@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { CreditCard, Link as LinkIcon, Smartphone, Repeat } from "lucide-react";
+import { CreditCard, Link as LinkIcon, Smartphone, Repeat, Database, Monitor } from "lucide-react";
 
 export const Services: React.FC = () => {
   const services = [
@@ -37,6 +37,22 @@ export const Services: React.FC = () => {
       icon: <Repeat size={36} className="text-pluggo-green" />,
       link: "/solutions",
     },
+    {
+      id: 5,
+      title: "Hub de Integração",
+      description:
+        "Integração completa com os principais liquidantes do mercado, facilitando a gestão de pagamentos.",
+      icon: <Database size={36} className="text-pluggo-green" />,
+      link: "/solutions",
+    },
+    {
+      id: 6,
+      title: "Painel Administrativo",
+      description:
+        "Dashboard intuitivo para gerenciamento completo de clientes, transações e relatórios financeiros.",
+      icon: <Monitor size={36} className="text-pluggo-green" />,
+      link: "/solutions",
+    },
   ];
 
   return (
@@ -53,7 +69,7 @@ export const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <div
               key={service.id}

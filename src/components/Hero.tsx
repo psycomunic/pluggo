@@ -12,9 +12,13 @@ export const Hero: React.FC = () => {
               Transforme sua sorte nos{" "}
               <span className="text-pluggo-green">pagamentos</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8">
+            <p className="text-lg md:text-xl text-gray-600 mb-4">
               Soluções completas para receber pagamentos online e presenciais com a
               facilidade e segurança que você merece.
+            </p>
+            <p className="text-md md:text-lg text-gray-600 mb-8">
+              Hub de integração com os principais liquidantes, Pix, boleto bancário e painel 
+              administrativo intuitivo para gerenciar seus clientes.
             </p>
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
               <Link to="/solutions" className="btn-primary">
