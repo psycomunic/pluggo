@@ -26,14 +26,15 @@ export const Hero: React.FC = () => {
             </div>
           </div>
           <div className="hidden lg:flex justify-center lg:justify-end animate-float">
-            {/* Leprechaun mascot placeholder */}
+            {/* Mascote Leprechaun real */}
             <div className="relative">
               <div className="w-72 h-72 bg-pluggo-green rounded-full opacity-10 absolute -top-10 -right-10"></div>
-              <div className="w-80 h-80 bg-pluggo-gold rounded-full relative overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-pluggo-gold/80 to-pluggo-gold/40"></div>
-                <div className="relative w-64 h-64 bg-pluggo-green rounded-full flex items-center justify-center text-center text-white">
-                  <div className="text-2xl font-bold">Mascote<br/>PlugGo<br/>Leprechaun</div>
-                </div>
+              <div className="w-80 h-80 relative overflow-hidden flex items-center justify-center">
+                <img 
+                  src="/images/leprechaun-mascot.png" 
+                  alt="PlugGo Leprechaun Mascot" 
+                  className="max-w-full max-h-full object-contain"
+                />
               </div>
             </div>
           </div>

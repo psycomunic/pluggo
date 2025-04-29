@@ -30,10 +30,9 @@ export const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
-          {/* Logo placeholder - replace with actual logo */}
+          {/* Logo real da PlugGo */}
           <div className="flex items-center">
-            <div className="w-10 h-10 rounded-full bg-pluggo-green flex items-center justify-center text-white font-bold text-2xl">P</div>
-            <span className={`ml-2 font-bold text-xl ${scrolled ? "text-pluggo-darkGray" : "text-pluggo-darkGray"}`}>PlugGo</span>
+            <img src="/images/pluggo-logo.png" alt="PlugGo Logo" className="h-10" />
           </div>
         </Link>
 

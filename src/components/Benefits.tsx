@@ -62,9 +62,13 @@ export const Benefits: React.FC = () => {
             "Encontre a sorte nos seus negócios com soluções de pagamento que realmente
             funcionam para você."
           </p>
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-pluggo-gold rounded-full">
-            {/* Leprechaun icon placeholder */}
-            <div className="text-white font-bold text-2xl">LP</div>
+          <div className="inline-flex items-center justify-center w-20 h-20">
+            {/* Leprechaun mascot */}
+            <img 
+              src="/images/leprechaun-mascot.png" 
+              alt="PlugGo Leprechaun Mascot" 
+              className="w-20 h-20 object-contain" 
+            />
           </div>
         </div>
       </div>
