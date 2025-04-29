@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
               <div className="w-72 h-72 bg-pluggo-green rounded-full opacity-10 absolute -top-10 -right-10"></div>
               <div className="w-80 h-80 relative overflow-hidden flex items-center justify-center">
                 <img 
-                  src="/images/leprechaun-mascot.png" 
+                  src="/public/lovable-uploads/0afecb25-c6ca-42fe-a1f1-e2d5bf368139.png" 
                   alt="PlugGo Leprechaun Mascot" 
                   className="max-w-full max-h-full object-contain"
                 />

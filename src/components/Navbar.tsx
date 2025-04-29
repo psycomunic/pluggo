@@ -32,7 +32,7 @@ export const Navbar: React.FC = () => {
         <Link to="/" className="flex items-center gap-2">
           {/* Logo real da PlugGo */}
           <div className="flex items-center">
-            <img src="/images/pluggo-logo.png" alt="PlugGo Logo" className="h-10" />
+            <img src="/public/lovable-uploads/cc01cb4d-5284-4b19-b216-96d31585bcba.png" alt="PlugGo Logo" className="h-10" />
           </div>
         </Link>
 
