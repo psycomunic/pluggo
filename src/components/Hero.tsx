@@ -46,14 +46,14 @@ export const Hero: React.FC = () => {
           </div>
           
           {/* Right content - Image */}
-          <div className="hidden lg:flex justify-center lg:col-span-5 animate-float">
+          <div className="hidden lg:flex justify-center lg:col-span-5">
             <div className="relative">
               <div className="absolute -z-10 w-[500px] h-[500px] bg-green-100 rounded-full blur-3xl opacity-30 -top-20 -right-20"></div>
-              <div className="w-full relative overflow-hidden rounded-lg shadow-xl">
+              <div className="w-full relative">
                 <img 
-                  src="/images/enterprise-team.jpg" 
-                  alt="Equipe empresarial PlugGo Capital" 
-                  className="w-full h-auto object-cover rounded-lg"
+                  src="/lovable-uploads/6e86fa39-6782-45ef-97b8-23f01ebd4a25.png" 
+                  alt="Executivo PlugGo Capital" 
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
