@@ -34,7 +34,7 @@ export const Benefits: React.FC = () => {
     <section className="section-padding bg-gray-50 bg-clover-pattern">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Por Que Escolher a PlugGo?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Por Que Escolher a PlugGo Capital?</h2>
           <div className="h-1 w-24 bg-pluggo-green mx-auto mb-6"></div>
           <p className="text-lg text-gray-600">
             Combinamos tecnologia e segurança para oferecer a melhor experiência
@@ -110,8 +110,8 @@ export const Benefits: React.FC = () => {
           </p>
           <div className="inline-flex items-center justify-center w-20 h-20">
             <img 
-              src="/lovable-uploads/0afecb25-c6ca-42fe-a1f1-e2d5bf368139.png" 
-              alt="PlugGo Mascot" 
+              src="/lovable-uploads/fd993115-b9e3-4be4-8932-a43c8078ef83.png" 
+              alt="PlugGo Capital Mascote" 
               className="w-20 h-20 object-contain" 
             />
           </div>

@@ -30,9 +30,9 @@ export const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
-          {/* Logo real da PlugGo */}
+          {/* Logo da PlugGo Capital */}
           <div className="flex items-center">
-            <img src="/lovable-uploads/cc01cb4d-5284-4b19-b216-96d31585bcba.png" alt="PlugGo Logo" className="h-10" />
+            <img src="/lovable-uploads/3d3e0fff-efd6-40f3-866e-383f28d3ca0c.png" alt="PlugGo Capital Logo" className="h-12" />
           </div>
         </Link>
 

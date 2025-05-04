@@ -11,10 +11,10 @@ export const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-4">
-              <img src="/lovable-uploads/cc01cb4d-5284-4b19-b216-96d31585bcba.png" alt="PlugGo Logo" className="h-12" />
+              <img src="/lovable-uploads/3d3e0fff-efd6-40f3-866e-383f28d3ca0c.png" alt="PlugGo Capital Logo" className="h-12" />
             </div>
             <p className="text-gray-300 mb-4">
-              Soluções inovadoras de pagamento para impulsionar o seu negócio com a sorte do sucesso.
+              Soluções inovadoras de pagamento para impulsionar o seu negócio com eficiência e segurança.
             </p>
             <div className="flex space-x-4">
               {/* Social Media Icons Placeholder */}
@@ -107,7 +107,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-start">
                 <Mail size={18} className="text-pluggo-gold mr-2 mt-1" />
-                <span className="text-gray-300">contato@pluggo.com.br</span>
+                <span className="text-gray-300">contato@pluggocapital.com.br</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="text-pluggo-gold mr-2 mt-1" />
@@ -121,7 +121,7 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} PlugGo. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} PlugGo Capital. Todos os direitos reservados.
           </p>
         </div>
       </div>
