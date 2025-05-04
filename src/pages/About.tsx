@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Layout } from "../components/Layout";
 import { ContactCTA } from "../components/ContactCTA";
@@ -16,7 +15,7 @@ const About = () => {
               <div className="h-1 w-24 bg-pluggo-gold mx-auto mb-8"></div>
               <p className="text-xl text-gray-600">
                 Conheça nossa história e como estamos transformando o mercado de pagamentos
-                com inovação, segurança e um toque de sorte.
+                com inovação e segurança.
               </p>
             </div>
           </div>
@@ -45,14 +44,13 @@ const About = () => {
                 </p>
               </div>
               <div className="flex justify-center">
-                {/* Image placeholder */}
                 <div className="relative">
                   <div className="w-72 h-72 bg-pluggo-gold rounded-full opacity-10 absolute -bottom-10 -left-10"></div>
                   <div className="w-80 h-80 bg-pluggo-green rounded-full relative flex items-center justify-center">
                     <div className="absolute inset-0 bg-gradient-to-br from-pluggo-green/80 to-pluggo-green/40"></div>
                     <div className="relative text-white text-center px-8">
-                      <div className="text-3xl font-bold mb-4">Nossa Mascote</div>
-                      <p>O leprechaun que traz sorte e sucesso para seu negócio</p>
+                      <div className="text-3xl font-bold mb-4">Nossa Missão</div>
+                      <p>Facilitar os pagamentos e impulsionar o crescimento dos negócios</p>
                     </div>
                   </div>
                 </div>

@@ -9,12 +9,12 @@ export const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Transforme sua sorte nos{" "}
+              Transforme seus negócios com{" "}
               <span className="text-pluggo-green">pagamentos</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-4">
               Soluções completas para receber pagamentos online e presenciais com a
-              facilidade e segurança que você merece.
+              segurança e eficiência que seu negócio precisa.
             </p>
             <p className="text-md md:text-lg text-gray-600 mb-8">
               Hub de integração com os principais liquidantes, Pix, boleto bancário e painel 
@@ -30,13 +30,12 @@ export const Hero: React.FC = () => {
             </div>
           </div>
           <div className="hidden lg:flex justify-center lg:justify-end animate-float">
-            {/* Mascote Leprechaun real */}
             <div className="relative">
               <div className="w-72 h-72 bg-pluggo-green rounded-full opacity-10 absolute -top-10 -right-10"></div>
               <div className="w-80 h-80 relative overflow-hidden flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/0afecb25-c6ca-42fe-a1f1-e2d5bf368139.png" 
-                  alt="PlugGo Leprechaun Mascot" 
+                  alt="PlugGo Mascot" 
                   className="max-w-full max-h-full object-contain"
                 />
               </div>

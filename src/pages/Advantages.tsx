@@ -22,7 +22,7 @@ const Advantages = () => {
     {
       id: 2,
       title: "Recebimento Rápido",
-      description: "Por que esperar? Com a PlugGo, você recebe o pagamento de suas vendas em até 1 dia útil, melhorando seu fluxo de caixa.",
+      description: "Com a PlugGo, você recebe o pagamento de suas vendas em até 1 dia útil, melhorando seu fluxo de caixa.",
       icon: <Clock size={48} className="text-pluggo-green" />,
       color: "bg-yellow-50",
       features: [
