@@ -11,8 +11,8 @@ export const Hero: React.FC = () => {
           {/* Left content - Text */}
           <div className="lg:col-span-7 text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Transforme seus negócios com{" "}
-              <span className="text-pluggo-green">pagamentos</span>
+              Transforme seu negócio com a{" "}
+              <span className="text-pluggo-green">PluGo!</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8">
               Soluções completas para receber pagamentos online e presenciais com a
