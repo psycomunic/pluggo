@@ -1,10 +1,16 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout } from "../components/Layout";
 import { ContactCTA } from "../components/ContactCTA";
 import { CreditCard, Smartphone, Link as LinkIcon, Repeat, Tag, ShieldCheck } from "lucide-react";
+import { observeScrollAnimations } from "../utils/animationUtils";
 
 const Solutions = () => {
+  useEffect(() => {
+    const cleanup = observeScrollAnimations();
+    return cleanup;
+  }, []);
+
   const solutions = [
     {
       id: 1,
@@ -19,7 +25,7 @@ const Solutions = () => {
         "Aceitação de todas as bandeiras"
       ],
       icon: <CreditCard size={48} className="text-pluggo-green" />,
-      image: "maquininha.jpg"
+      image: "public/lovable-uploads/e173af87-3108-475c-b51c-9cb5df769c6e.png"
     },
     {
       id: 2,
@@ -64,7 +70,7 @@ const Solutions = () => {
         "Integração com sistemas"
       ],
       icon: <Repeat size={48} className="text-pluggo-green" />,
-      image: "recorrencia.jpg"
+      image: "public/lovable-uploads/7f02ea73-657d-4bca-ac2e-f8591b4bc146.png"
     },
     {
       id: 5,
@@ -102,12 +108,12 @@ const Solutions = () => {
     <Layout>
       <div className="pt-24 md:pt-32">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-white to-green-50 py-16">
+        <section className="bg-gradient-to-b from-white to-green-50 dark:from-gray-900 dark:to-gray-800 py-16">
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Nossas Soluções</h1>
+            <div className="text-center max-w-3xl mx-auto animate-on-scroll">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 dark:text-white">Nossas Soluções</h1>
               <div className="h-1 w-24 bg-pluggo-gold mx-auto mb-8"></div>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-300">
                 Conheça as ferramentas completas que a PlugGo oferece para 
                 impulsionar seu negócio com segurança e praticidade.
               </p>
@@ -116,22 +122,23 @@ const Solutions = () => {
         </section>
 
         {/* Solutions Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="space-y-24">
               {solutions.map((solution, index) => (
                 <div
                   key={solution.id}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-on-scroll ${
                     index % 2 !== 0 ? "lg:grid-flow-dense" : ""
                   }`}
+                  style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <div className={index % 2 !== 0 ? "lg:col-start-2" : ""}>
                     <div className="mb-6 flex items-center">
                       {solution.icon}
-                      <h2 className="text-3xl font-bold ml-4">{solution.title}</h2>
+                      <h2 className="text-3xl font-bold ml-4 dark:text-white">{solution.title}</h2>
                     </div>
-                    <p className="text-lg text-gray-600 mb-6">{solution.description}</p>
+                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">{solution.description}</p>
                     <ul className="space-y-3 mb-8">
                       {solution.features.map((feature, i) => (
                         <li key={i} className="flex items-start">
@@ -149,21 +156,31 @@ const Solutions = () => {
                               d="M5 13l4 4L19 7"
                             />
                           </svg>
-                          <span>{feature}</span>
+                          <span className="dark:text-gray-300">{feature}</span>
                         </li>
                       ))}
                     </ul>
-                    <button className="btn-primary">Quero esta solução</button>
+                    <button className="btn-primary hover:scale-105 transition-transform duration-300">Quero esta solução</button>
                   </div>
                   
                   <div className={index % 2 !== 0 ? "lg:col-start-1" : ""}>
-                    <div className="relative rounded-2xl overflow-hidden shadow-xl h-80 bg-gradient-to-br from-pluggo-green to-green-700 flex items-center justify-center">
-                      <div className="absolute inset-0 opacity-20 bg-clover-pattern"></div>
-                      <div className="relative text-white text-center px-12">
-                        <div className="text-4xl font-bold mb-4">{solution.title}</div>
-                        <p className="text-lg">Solução PlugGo para seu negócio</p>
+                    {solution.image && solution.image.startsWith("public/") ? (
+                      <div className="glass-card p-4 rounded-2xl overflow-hidden shadow-xl">
+                        <img 
+                          src={solution.image} 
+                          alt={solution.title} 
+                          className="w-full h-80 object-contain rounded-xl hover:scale-105 transition-transform duration-500" 
+                        />
                       </div>
-                    </div>
+                    ) : (
+                      <div className="relative rounded-2xl overflow-hidden shadow-xl h-80 bg-gradient-to-br from-pluggo-green to-green-700 flex items-center justify-center glass-card">
+                        <div className="absolute inset-0 opacity-20 bg-clover-pattern"></div>
+                        <div className="relative text-white text-center px-12">
+                          <div className="text-4xl font-bold mb-4">{solution.title}</div>
+                          <p className="text-lg">Solução PlugGo para seu negócio</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

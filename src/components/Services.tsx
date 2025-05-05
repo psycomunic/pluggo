@@ -9,6 +9,7 @@ import {
   Database, 
   Monitor 
 } from "lucide-react";
+import { observeScrollAnimations, getStaggeredDelay } from "../utils/animationUtils";
 
 export const Services: React.FC = () => {
   // Referência para elementos que terão animação ao scroll
@@ -16,30 +17,8 @@ export const Services: React.FC = () => {
 
   // Effect para detectar quando elementos entram na viewport
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-        }
-      });
-    }, observerOptions);
-
-    const elements = document.querySelectorAll(".animate-on-scroll");
-    elements.forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => {
-      elements.forEach((el) => {
-        observer.unobserve(el);
-      });
-    };
+    const cleanup = observeScrollAnimations();
+    return cleanup;
   }, []);
 
   const services = [
@@ -68,6 +47,7 @@ export const Services: React.FC = () => {
         "Acompanhe suas vendas, extratos e relatórios em tempo real pelo aplicativo PlugGo.",
       icon: <Smartphone size={36} className="text-pluggo-green" />,
       link: "/solutions",
+      image: "public/lovable-uploads/e173af87-3108-475c-b51c-9cb5df769c6e.png"
     },
     {
       id: 4,
@@ -76,6 +56,7 @@ export const Services: React.FC = () => {
         "Ideal para assinaturas e mensalidades com cobrança automática e gestão facilitada.",
       icon: <Repeat size={36} className="text-pluggo-green" />,
       link: "/solutions",
+      image: "public/lovable-uploads/7f02ea73-657d-4bca-ac2e-f8591b4bc146.png"
     },
     {
       id: 5,
@@ -117,7 +98,7 @@ export const Services: React.FC = () => {
                 if (el) animatedElsRef.current[index] = el;
               }}
               className={`animate-on-scroll glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300`}
-              style={{ animationDelay: `${index * 150}ms` }}
+              style={{ animationDelay: getStaggeredDelay(index) }}
             >
               <div className="p-6 flex flex-col h-full">
                 {service.image ? (
@@ -125,17 +106,17 @@ export const Services: React.FC = () => {
                     <img 
                       src={service.image} 
                       alt={service.title} 
-                      className="w-full h-48 object-contain animate-zoom dark:bg-white/5 rounded-xl p-2"
+                      className="w-full h-48 object-contain animate-zoom dark:bg-white/5 rounded-xl p-2 hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 ) : null}
                 
-                <div className="mb-4">{service.icon}</div>
+                <div className="mb-4 transform hover:scale-110 transition-transform duration-300">{service.icon}</div>
                 <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">{service.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{service.description}</p>
                 <Link
                   to={service.link}
-                  className="text-pluggo-green font-medium inline-flex items-center group-hover:underline hover:text-green-600 transition-colors duration-200"
+                  className="text-pluggo-green font-medium inline-flex items-center group hover:underline hover:text-green-600 transition-colors duration-200"
                 >
                   Saiba mais
                   <svg

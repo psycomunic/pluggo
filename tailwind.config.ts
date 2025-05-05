@@ -104,6 +104,15 @@ export default {
 				'zoom': {
 					'0%, 100%': { transform: 'scale(1)' },
 					'50%': { transform: 'scale(1.05)' }
+				},
+				'rotate-glow': {
+					'0%': { transform: 'rotate(0deg)', boxShadow: '0 0 10px rgba(40,167,69,0.6)' },
+					'50%': { transform: 'rotate(180deg)', boxShadow: '0 0 20px rgba(40,167,69,0.8)' },
+					'100%': { transform: 'rotate(360deg)', boxShadow: '0 0 10px rgba(40,167,69,0.6)' }
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-200% 0' },
+					'100%': { backgroundPosition: '200% 0' }
 				}
 			},
 			animation: {
@@ -113,13 +122,16 @@ export default {
 				'pulse-subtle': 'pulse-subtle 3s ease-in-out infinite',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'slide-in': 'slide-in 0.5s ease-out',
-				'zoom': 'zoom 6s ease-in-out infinite'
+				'zoom': 'zoom 6s ease-in-out infinite',
+				'rotate-glow': 'rotate-glow 7s linear infinite',
+				'shimmer': 'shimmer 2s linear infinite'
 			},
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif']
 			},
 			backgroundImage: {
-				'clover-pattern': "url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI2VmZmZlZiIgZmlsbC1vcGFjaXR5PSIwLjIiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGNpcmNsZSBjeD0iMyIgY3k9IjMiIHI9IjIiLz48L2c+PC9zdmc+')"
+				'clover-pattern': "url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI2VmZmZlZiIgZmlsbC1vcGFjaXR5PSIwLjIiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGNpcmNsZSBjeD0iMyIgY3k9IjMiIHI9IjIiLz48L2c+PC9zdmc+')",
+				'shimmer-gradient': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%)',
 			}
 		}
 	},
