@@ -29,7 +29,7 @@ export const Services: React.FC = () => {
         "Aceite todos os cartões de débito, crédito e vouchers com as taxas mais competitivas do mercado.",
       icon: <CreditCard size={36} className="text-pluggo-green" />,
       link: "/solutions",
-      image: "public/lovable-uploads/cd2251d7-d164-4669-898b-9299a1230603.png" 
+      image: "/lovable-uploads/cd2251d7-d164-4669-898b-9299a1230603.png"
     },
     {
       id: 2,
@@ -38,7 +38,7 @@ export const Services: React.FC = () => {
         "Envie cobranças por WhatsApp, e-mail ou SMS e receba pagamentos de forma rápida e segura.",
       icon: <LinkIcon size={36} className="text-pluggo-green" />,
       link: "/solutions",
-      image: "public/lovable-uploads/2ab4582d-c35e-47d2-a94c-286dee456163.png"
+      image: "/lovable-uploads/2ab4582d-c35e-47d2-a94c-286dee456163.png"
     },
     {
       id: 3,
@@ -47,7 +47,7 @@ export const Services: React.FC = () => {
         "Acompanhe suas vendas, extratos e relatórios em tempo real pelo aplicativo PlugGo.",
       icon: <Smartphone size={36} className="text-pluggo-green" />,
       link: "/solutions",
-      image: "public/lovable-uploads/e173af87-3108-475c-b51c-9cb5df769c6e.png"
+      image: "/lovable-uploads/e173af87-3108-475c-b51c-9cb5df769c6e.png"
     },
     {
       id: 4,
@@ -56,7 +56,7 @@ export const Services: React.FC = () => {
         "Ideal para assinaturas e mensalidades com cobrança automática e gestão facilitada.",
       icon: <Repeat size={36} className="text-pluggo-green" />,
       link: "/solutions",
-      image: "public/lovable-uploads/7f02ea73-657d-4bca-ac2e-f8591b4bc146.png"
+      image: "/lovable-uploads/7f02ea73-657d-4bca-ac2e-f8591b4bc146.png"
     },
     {
       id: 5,
@@ -65,6 +65,7 @@ export const Services: React.FC = () => {
         "Integração completa com os principais liquidantes do mercado, facilitando a gestão de pagamentos.",
       icon: <Database size={36} className="text-pluggo-green" />,
       link: "/solutions",
+      image: "/lovable-uploads/3d3e0fff-efd6-40f3-866e-383f28d3ca0c.png"
     },
     {
       id: 6,
@@ -73,6 +74,7 @@ export const Services: React.FC = () => {
         "Dashboard intuitivo para gerenciamento completo de clientes, transações e relatórios financeiros.",
       icon: <Monitor size={36} className="text-pluggo-green" />,
       link: "/solutions",
+      image: "/lovable-uploads/693b15a9-1b4b-4727-82ef-794dbd532e54.png"
     },
   ];
 
@@ -101,15 +103,20 @@ export const Services: React.FC = () => {
               style={{ animationDelay: getStaggeredDelay(index) }}
             >
               <div className="p-6 flex flex-col h-full">
-                {service.image ? (
+                {service.image && (
                   <div className="mb-5 overflow-hidden rounded-xl">
                     <img 
                       src={service.image} 
                       alt={service.title} 
                       className="w-full h-48 object-contain animate-zoom dark:bg-white/5 rounded-xl p-2 hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        console.error(`Failed to load image: ${target.src}`);
+                        target.src = '/placeholder.svg';
+                      }}
                     />
                   </div>
-                ) : null}
+                )}
                 
                 <div className="mb-4 transform hover:scale-110 transition-transform duration-300">{service.icon}</div>
                 <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">{service.title}</h3>

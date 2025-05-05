@@ -5,7 +5,7 @@ import { Footer } from "./Footer";
 import { Toaster } from "./ui/toaster";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "./ui/button";
-import { initializeTheme, toggleTheme } from "../utils/themeUtils";
+import { initializeTheme, toggleTheme, listenForThemeChanges } from "../utils/themeUtils";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -22,6 +22,10 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     // Initialize theme based on saved preferences
     const isDarkMode = initializeTheme();
     setDarkMode(isDarkMode);
+    
+    // Listen for system theme changes
+    const cleanup = listenForThemeChanges(setDarkMode);
+    return cleanup;
   }, []);
   
   // Função para alternar entre modo claro e escuro

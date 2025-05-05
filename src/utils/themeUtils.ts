@@ -51,3 +51,36 @@ export const toggleTheme = (): boolean => {
   setTheme(newTheme);
   return newTheme;
 };
+
+// Function to listen for system theme changes
+export const listenForThemeChanges = (callback: (isDark: boolean) => void) => {
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  
+  const handleChange = (e: MediaQueryListEvent) => {
+    // Only update if user hasn't set a preference
+    if (localStorage.getItem("darkMode") === null) {
+      const newTheme = e.matches;
+      setTheme(newTheme);
+      callback(newTheme);
+    }
+  };
+  
+  // Modern browsers
+  try {
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  } catch (err) {
+    // Fallback for Safari < 14
+    try {
+      // @ts-ignore - Safari fallback
+      mediaQuery.addListener(handleChange);
+      return () => {
+        // @ts-ignore - Safari fallback
+        mediaQuery.removeListener(handleChange);
+      };
+    } catch (err2) {
+      console.error("Could not listen for theme changes:", err2);
+      return () => {};
+    }
+  }
+};

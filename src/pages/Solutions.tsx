@@ -25,7 +25,7 @@ const Solutions = () => {
         "Aceitação de todas as bandeiras"
       ],
       icon: <CreditCard size={48} className="text-pluggo-green" />,
-      image: "public/lovable-uploads/e173af87-3108-475c-b51c-9cb5df769c6e.png"
+      image: "/lovable-uploads/cd2251d7-d164-4669-898b-9299a1230603.png"
     },
     {
       id: 2,
@@ -40,7 +40,7 @@ const Solutions = () => {
         "Dashboard de controle"
       ],
       icon: <LinkIcon size={48} className="text-pluggo-green" />,
-      image: "link.jpg"
+      image: "/lovable-uploads/2ab4582d-c35e-47d2-a94c-286dee456163.png"
     },
     {
       id: 3,
@@ -55,7 +55,7 @@ const Solutions = () => {
         "Notificações instantâneas"
       ],
       icon: <Smartphone size={48} className="text-pluggo-green" />,
-      image: "app.jpg"
+      image: "/lovable-uploads/e173af87-3108-475c-b51c-9cb5df769c6e.png"
     },
     {
       id: 4,
@@ -70,7 +70,7 @@ const Solutions = () => {
         "Integração com sistemas"
       ],
       icon: <Repeat size={48} className="text-pluggo-green" />,
-      image: "public/lovable-uploads/7f02ea73-657d-4bca-ac2e-f8591b4bc146.png"
+      image: "/lovable-uploads/7f02ea73-657d-4bca-ac2e-f8591b4bc146.png"
     },
     {
       id: 5,
@@ -85,7 +85,7 @@ const Solutions = () => {
         "Segurança PCI compliant"
       ],
       icon: <Tag size={48} className="text-pluggo-green" />,
-      image: "checkout.jpg"
+      image: "/lovable-uploads/6e86fa39-6782-45ef-97b8-23f01ebd4a25.png"
     },
     {
       id: 6,
@@ -100,7 +100,7 @@ const Solutions = () => {
         "Relatórios customizáveis"
       ],
       icon: <ShieldCheck size={48} className="text-pluggo-green" />,
-      image: "gateway.jpg"
+      image: "/lovable-uploads/fd993115-b9e3-4be4-8932-a43c8078ef83.png"
     }
   ];
 
@@ -163,13 +163,18 @@ const Solutions = () => {
                     <button className="btn-primary hover:scale-105 transition-transform duration-300">Quero esta solução</button>
                   </div>
                   
-                  <div className={index % 2 !== 0 ? "lg:col-start-1" : ""}>
-                    {solution.image && solution.image.startsWith("public/") ? (
-                      <div className="glass-card p-4 rounded-2xl overflow-hidden shadow-xl">
+                  <div className={`${index % 2 !== 0 ? "lg:col-start-1" : ""}`}>
+                    {solution.image ? (
+                      <div className="glass-card p-4 rounded-2xl overflow-hidden shadow-xl transform hover:scale-[1.02] transition-all duration-300">
                         <img 
                           src={solution.image} 
-                          alt={solution.title} 
+                          alt={solution.title}
                           className="w-full h-80 object-contain rounded-xl hover:scale-105 transition-transform duration-500" 
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            console.error(`Failed to load image: ${target.src}`);
+                            target.src = '/placeholder.svg';
+                          }}
                         />
                       </div>
                     ) : (
