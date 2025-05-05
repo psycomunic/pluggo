@@ -118,11 +118,13 @@
   }
   
   .glass-card {
-    @apply bg-white/20 dark:bg-white/10 backdrop-blur-lg border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300;
+    @apply backdrop-blur-lg border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
   }
   
   .glass-button {
-    @apply bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/5 hover:bg-white/40 dark:hover:bg-white/20 transition-all duration-300;
+    @apply backdrop-blur-md border border-white/20 dark:border-white/5 hover:bg-white/40 dark:hover:bg-white/20 transition-all duration-300;
+    background: rgba(255, 255, 255, 0.3);
   }
   
   .animate-on-scroll {
@@ -149,6 +151,50 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-pluggo-green to-green-400;
   }
+  
+  /* Apple-like glass effects */
+  .apple-glass {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .apple-glass-dark {
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 3D Parallax Card Effect */
+  .parallax-card {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transition: all 0.3s ease;
+  }
+  
+  .parallax-card-inner {
+    transform: translateZ(20px);
+  }
+  
+  /* Button Improvements */
+  .btn-glass {
+    @apply px-5 py-2.5 rounded-full font-medium;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-glass:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
 }
 
 @keyframes float {
@@ -169,6 +215,15 @@
   }
 }
 
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
 @layer utilities {
   .animate-float {
     animation: float 4s ease-in-out infinite;
@@ -176,5 +231,18 @@
   
   .animate-spin-slow {
     animation: spin-slow 6s linear infinite;
+  }
+  
+  .animate-shine {
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+    background-size: 200% 100%;
+    background-position: 200% center;
+    animation: shine 3s linear infinite;
+  }
+  
+  /* Apple-like 3D text */
+  .text-3d {
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.5px;
   }
 }

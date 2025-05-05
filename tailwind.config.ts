@@ -113,7 +113,26 @@ export default {
 				'shimmer': {
 					'0%': { backgroundPosition: '-200% 0' },
 					'100%': { backgroundPosition: '200% 0' }
-				}
+				},
+				'levitate': {
+					'0%, 100%': { transform: 'translateY(0) rotate(0)' },
+					'25%': { transform: 'translateY(-5px) rotate(2deg)' },
+					'75%': { transform: 'translateY(-8px) rotate(-2deg)' },
+				},
+				'blur-in': {
+					'0%': { filter: 'blur(10px)', opacity: '0' },
+					'100%': { filter: 'blur(0)', opacity: '1' },
+				},
+				'ripple': {
+					'0%': { transform: 'scale(0.8)', opacity: '1' },
+					'100%': { transform: 'scale(2.4)', opacity: '0' },
+				},
+                'wave': {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '25%': { transform: 'translateY(-8px)' },
+                    '50%': { transform: 'translateY(0)' },
+                    '75%': { transform: 'translateY(8px)' },
+                },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -124,7 +143,11 @@ export default {
 				'slide-in': 'slide-in 0.5s ease-out',
 				'zoom': 'zoom 6s ease-in-out infinite',
 				'rotate-glow': 'rotate-glow 7s linear infinite',
-				'shimmer': 'shimmer 2s linear infinite'
+				'shimmer': 'shimmer 2s linear infinite',
+                'levitate': 'levitate 7s ease-in-out infinite',
+                'blur-in': 'blur-in 0.7s ease-out',
+                'ripple': 'ripple 1.5s linear infinite',
+                'wave': 'wave 3s ease-in-out infinite',
 			},
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif']
@@ -132,7 +155,15 @@ export default {
 			backgroundImage: {
 				'clover-pattern': "url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI2VmZmZlZiIgZmlsbC1vcGFjaXR5PSIwLjIiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGNpcmNsZSBjeD0iMyIgY3k9IjMiIHI9IjIiLz48L2c+PC9zdmc+')",
 				'shimmer-gradient': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%)',
-			}
+                'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
+                'glass-gradient-dark': 'linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%)',
+			},
+            backdropBlur: {
+                'xs': '2px',
+                'md': '10px',
+                'lg': '20px',
+                'xl': '40px',
+            },
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

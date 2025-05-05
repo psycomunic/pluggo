@@ -38,7 +38,7 @@ export const Services: React.FC = () => {
         "Envie cobranças por WhatsApp, e-mail ou SMS e receba pagamentos de forma rápida e segura.",
       icon: <LinkIcon size={36} className="text-pluggo-green" />,
       link: "/solutions",
-      image: "/lovable-uploads/2ab4582d-c35e-47d2-a94c-286dee456163.png"
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
     },
     {
       id: 3,
@@ -47,7 +47,7 @@ export const Services: React.FC = () => {
         "Acompanhe suas vendas, extratos e relatórios em tempo real pelo aplicativo PlugGo.",
       icon: <Smartphone size={36} className="text-pluggo-green" />,
       link: "/solutions",
-      image: "/lovable-uploads/e173af87-3108-475c-b51c-9cb5df769c6e.png"
+      image: "https://images.unsplash.com/photo-1601972599720-36938d4ecd31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
     },
     {
       id: 4,
@@ -56,7 +56,7 @@ export const Services: React.FC = () => {
         "Ideal para assinaturas e mensalidades com cobrança automática e gestão facilitada.",
       icon: <Repeat size={36} className="text-pluggo-green" />,
       link: "/solutions",
-      image: "/lovable-uploads/7f02ea73-657d-4bca-ac2e-f8591b4bc146.png"
+      image: "https://images.unsplash.com/photo-1589666564459-93cdd3ab856a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
     },
     {
       id: 5,
@@ -65,7 +65,7 @@ export const Services: React.FC = () => {
         "Integração completa com os principais liquidantes do mercado, facilitando a gestão de pagamentos.",
       icon: <Database size={36} className="text-pluggo-green" />,
       link: "/solutions",
-      image: "/lovable-uploads/3d3e0fff-efd6-40f3-866e-383f28d3ca0c.png"
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
     },
     {
       id: 6,
@@ -74,7 +74,7 @@ export const Services: React.FC = () => {
         "Dashboard intuitivo para gerenciamento completo de clientes, transações e relatórios financeiros.",
       icon: <Monitor size={36} className="text-pluggo-green" />,
       link: "/solutions",
-      image: "/lovable-uploads/693b15a9-1b4b-4727-82ef-794dbd532e54.png"
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
     },
   ];
 
@@ -100,7 +100,12 @@ export const Services: React.FC = () => {
                 if (el) animatedElsRef.current[index] = el;
               }}
               className={`animate-on-scroll glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300`}
-              style={{ animationDelay: getStaggeredDelay(index) }}
+              style={{ 
+                animationDelay: getStaggeredDelay(index),
+                background: `linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))`,
+                backdropFilter: 'blur(12px)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
+              }}
             >
               <div className="p-6 flex flex-col h-full">
                 {service.image && (
@@ -108,7 +113,8 @@ export const Services: React.FC = () => {
                     <img 
                       src={service.image} 
                       alt={service.title} 
-                      className="w-full h-48 object-contain animate-zoom dark:bg-white/5 rounded-xl p-2 hover:scale-105 transition-transform duration-500"
+                      className="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         console.error(`Failed to load image: ${target.src}`);
@@ -123,7 +129,7 @@ export const Services: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{service.description}</p>
                 <Link
                   to={service.link}
-                  className="text-pluggo-green font-medium inline-flex items-center group hover:underline hover:text-green-600 transition-colors duration-200"
+                  className="btn-primary inline-flex items-center group hover:shadow-lg transition-all duration-300"
                 >
                   Saiba mais
                   <svg

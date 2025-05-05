@@ -107,7 +107,7 @@ export const addParallaxEffect = () => {
     const elements = document.querySelectorAll('.parallax');
     elements.forEach((el) => {
       const scrollPosition = window.scrollY;
-      const speed = parseFloat(el.getAttribute('data-speed') || '0.5');
+      const speed = parseFloat(el.getAttribute('data-speed') || '0.05');
       (el as HTMLElement).style.transform = `translateY(${scrollPosition * speed}px)`;
     });
   };
@@ -116,4 +116,73 @@ export const addParallaxEffect = () => {
   return () => {
     window.removeEventListener('scroll', handleScroll);
   };
+};
+
+// Function to add 3D tilt effect similar to Apple.com
+export const addTiltEffect = (selector: string) => {
+  const elements = document.querySelectorAll(selector);
+  
+  elements.forEach((el) => {
+    el.addEventListener('mousemove', (e: MouseEvent) => {
+      const element = el as HTMLElement;
+      const rect = element.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const tiltX = (centerY - y) / 20;
+      const tiltY = (x - centerX) / 20;
+      
+      element.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+      element.style.transition = 'transform 0.1s linear';
+    });
+    
+    el.addEventListener('mouseleave', () => {
+      const element = el as HTMLElement;
+      element.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+      element.style.transition = 'transform 0.5s ease';
+    });
+  });
+  
+  return () => {
+    elements.forEach((el) => {
+      el.removeEventListener('mousemove', () => {});
+      el.removeEventListener('mouseleave', () => {});
+    });
+  };
+};
+
+// Add smooth scrolling effect
+export const addSmoothScroll = () => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      const href = this.getAttribute('href');
+      if (href) {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
+};
+
+// Add Apple-like glass effect to elements
+export const addGlassEffect = (selector: string) => {
+  const elements = document.querySelectorAll(selector);
+  
+  elements.forEach((el) => {
+    const element = el as HTMLElement;
+    element.style.backdropFilter = 'blur(10px)';
+    element.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+    element.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+    element.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
+  });
 };

@@ -25,13 +25,37 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     
     // Listen for system theme changes
     const cleanup = listenForThemeChanges(setDarkMode);
-    return cleanup;
+    
+    // Add parallax effect
+    const parallaxCleanup = addParallaxEffect();
+    
+    return () => {
+      cleanup();
+      parallaxCleanup();
+    };
   }, []);
   
   // Função para alternar entre modo claro e escuro
   const handleToggleDarkMode = () => {
     const newDarkMode = toggleTheme();
     setDarkMode(newDarkMode);
+  };
+  
+  // Parallax effect for moving elements based on scroll
+  const addParallaxEffect = () => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.parallax');
+      elements.forEach((el) => {
+        const scrollPosition = window.scrollY;
+        const speed = parseFloat(el.getAttribute('data-speed') || '0.05');
+        (el as HTMLElement).style.transform = `translateY(${scrollPosition * speed}px)`;
+      });
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   };
   
   return (
@@ -43,6 +67,12 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         size="icon"
         className="fixed right-4 top-20 z-50 rounded-full glass-button hover:scale-110 transition-transform duration-300"
         aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+        style={{
+          backdropFilter: 'blur(10px)',
+          background: darkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.7)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
+        }}
       >
         {darkMode ? (
           <Sun className="h-5 w-5 text-yellow-400 animate-spin-slow" />
